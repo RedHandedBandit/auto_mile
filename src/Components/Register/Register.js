@@ -8,7 +8,8 @@ class Register extends Component {
             lastname: '',
             username: '',
             password: '',
-            email: ''
+            email: '',
+            phone: ''
         }
     }
 
@@ -35,6 +36,11 @@ class Register extends Component {
                             onChange={(e) => this.handleInputChange('lastname', e.target.value)}
                             type="text"
                             value={this.state.lastname} />
+                        <input 
+                            placeholder="phone #"
+                            onChange={(e) => this.handleInputChange('phone', e.target.value)}
+                            type="text"
+                            value={this.state.phone} />
                         <input
                             placeholder="username"
                             onChange={(e) => this.handleInputChange('username', e.target.value)}
