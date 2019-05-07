@@ -30,7 +30,7 @@ module.exports = {
         let result = await db.get_user({username})
         const existingUser = result[0]
         if(existingUser) {
-            res.status(401).send('this username already exits')
+            return res.status(401).send('this username already exits')
         }
 
         const salt = bcrypt.genSaltSync(10);

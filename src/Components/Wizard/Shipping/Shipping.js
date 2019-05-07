@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from './../../Navbar/Navbar'
 
 class Shipping extends Component {
     constructor(){
@@ -11,6 +12,7 @@ class Shipping extends Component {
     render(){
         return (
             <div>
+                <Navbar />
                 I am Shipping
             </div>
         )
