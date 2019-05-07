@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Navbar from './Components/Navbar/Navbar';
 import routes from './routes';
 import axios from 'axios';

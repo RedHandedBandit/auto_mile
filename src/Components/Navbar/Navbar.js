@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { employee } from './../../ducks/reducer';
 import axios from 'axios';
 
+
 class Navbar extends Component {
     constructor(props){
         super(props)
@@ -29,10 +30,16 @@ class Navbar extends Component {
                 </h1>
                 <div>
                     <ul>
-                        {this.props.username && <li> {this.props.username} </li>}
-                        <Link to="/admin"> <li> view customers </li> </Link>
-                        <Link to="/profile">  <li> edit profile </li> </Link>
-                        <li onClick={() => this.logout()} > logout </li>
+                        <li className="dropdown">
+                        <span className="fas fa-bars hamy"> </span>
+                            <div className="dropdown-content">
+                                {this.props.username && <span> {this.props.username} </span>}
+                                <Link to="/personal"> <span> Home </span></Link>
+                                <Link to="/admin"> <span> view customers </span> </Link>
+                                <Link to="/profile">  <span> edit profile </span> </Link>
+                                <span onClick={() => this.logout()} > logout </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
