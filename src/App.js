@@ -1,22 +1,39 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
 import './App.css';
-// import Navbar from './Components/Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import routes from './routes';
-import { Provider } from 'react-redux';
-import store from './ducks/store';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import {employee} from './ducks/reducer';
 
-function App() {
+function App(props) {
+
+  axios.get('/auth/me').then( res => {
+    //reduxstate
+    props.employee(res.data)
+    console.log('app res.data', res.data)
+  })
+  .catch(error => console.log('nope', error))
   return (
-    <Provider store={store}> 
       <HashRouter> 
         <div className="App">
-          {/* <Navbar /> */}
+          {props.username ? <Navbar /> : null}
           {routes}
         </div>
     </HashRouter>
-    </Provider>
   );
 }
 
-export default App;
+const mapStateToProps = (reduxState) => {
+  const {username} = reduxState
+  return {
+    username
+  }
+}
+
+const dispatchStateToProps = {
+  employee
+}
+
+export default connect(mapStateToProps, dispatchStateToProps)(App);

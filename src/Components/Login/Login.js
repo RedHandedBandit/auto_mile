@@ -20,7 +20,6 @@ class Login extends Component {
         axios.post('/auth/login', {email, password}).then( res => {
             this.props.employee(res.data)
             this.props.history.push('/personal')
-            console.log('res.data login', res.data)
             this.setState({
                 email: '',
                 password: ''
@@ -33,7 +32,6 @@ class Login extends Component {
         this.setState({
             [prop]: val
         })
-        console.log(this.state)
     }
 
     render(){
@@ -71,7 +69,10 @@ class Login extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    return reduxState.username
+    const {username} = reduxState
+    return {
+        username
+    }
 }
 
 const dispatchToProps = {

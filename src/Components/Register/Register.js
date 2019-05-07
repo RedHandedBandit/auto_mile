@@ -21,7 +21,6 @@ class Register extends Component {
     register = () => {
         const { firstname, lastname, username, email, password, phone} = this.state
         axios.post('/auth/register', { firstname, lastname, username, phone: +phone, email, password }).then( res => {
-            console.log(111111, phone)
             this.props.employee(res.data)
             this.props.history.push('/personal')
             this.setState({
@@ -40,7 +39,6 @@ class Register extends Component {
         this.setState({
             [prop]: val
         })
-        console.log(this.state)
     }
 
     render(){
