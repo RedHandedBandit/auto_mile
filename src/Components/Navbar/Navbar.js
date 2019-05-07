@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { employee } from './../../ducks/reducer';
+import { employee } from './../../ducks/reducers/reducer';
 import axios from 'axios';
 
 

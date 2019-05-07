@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar/Navbar';
 import routes from './routes';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {employee} from './ducks/reducer';
+import {employee} from './ducks/reducers/reducer';
 
 function App(props) {
 
