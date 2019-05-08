@@ -4,47 +4,18 @@ insert into customer (
     company,
     mobile_phone,
     home_phone, 
+    billing_address_id,
+    home_address_id,
+    private_id,
     email
 ) values (
-    ${firstname}
-    ${lastname}
-    ${company}
-    ${mobile_phone}
-    ${home_phone}
+    ${firstname},
+    ${lastname},
+    ${company},
+    ${mobile_phone},
+    ${home_phone},
+    ${billing_id},
+    ${shipping_id},
+    ${private_id},
     ${email}
-);
-insert into customer_address (
-    address,
-    city,
-    state,
-    zipcode,
-    country
-) values (
-    ${shipping_address}
-    ${shipping_city}
-    ${shipping_state}
-    ${shipping_zipcode}
-    ${shipping_country}
-);
-insert into customer_address (
-    address,
-    city,
-    state,
-    zipcode,
-    country
-) values (
-    ${billing_address}
-    ${billing_city}
-    ${billing_state}
-    ${billing_zipcode}
-    ${billing_country}
-);
-insert into private (
-    card,
-    expire,
-    code
-) values (
-    ${card}
-    ${expire}
-    ${code}
 );

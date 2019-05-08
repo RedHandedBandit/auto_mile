@@ -3,6 +3,7 @@ require('dotenv').config();
 const massive = require('massive');
 const session = require('express-session')
 const authCtrl = require('./controllers/auth')
+const infoCtrl = require('./controllers/info')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
 
@@ -30,4 +31,4 @@ app.get('/auth/logout', authCtrl.logout)
 app.get('/auth/me', authCtrl.checkMe)
 
 //customer 
-app.post('/api/addCustomer')
+app.post('/api/addCustomer', infoCtrl.addCustomerInfo)

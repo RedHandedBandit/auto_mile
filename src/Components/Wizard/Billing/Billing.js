@@ -48,9 +48,9 @@ class Billing extends Component {
             billing_state: this.state.bState,
             billing_zipcode: +this.state.bZipCode,
             billing_country: this.state.bCountry,
-            card: +this.state.cardNumber,
-            expire: +this.state.expire,
-            code: +this.state.code
+            card: this.state.cardNumber,
+            expire: this.state.expire,
+            code: this.state.code
         }
 
         axios.post('/api/addCustomer', newCustomer).then( res => {
@@ -121,7 +121,7 @@ class Billing extends Component {
                     </label>
                     <div>
                         <Link to="/wizard/shipping"> 
-                            <button onClic={() => this.addBillingInfo()}> previous </button>
+                            <button onClick={() => this.addBillingInfo()}> previous </button>
                         </Link>
                         <button> Complete Order </button>
                     </div>
