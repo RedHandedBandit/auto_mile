@@ -48,7 +48,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    const { username, image } = reduxState
+    const { username, image } = reduxState.reducer
     return {
         username,
         image

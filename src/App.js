@@ -18,7 +18,7 @@ function App(props) {
   return (
       <HashRouter> 
         <div className="App">
-          {props.username ? <Navbar /> : null}
+          {props.username ? <Navbar /> : console.log(props)}
           {routes}
         </div>
     </HashRouter>
@@ -26,7 +26,7 @@ function App(props) {
 }
 
 const mapStateToProps = (reduxState) => {
-  const {username} = reduxState
+  const {username} = reduxState.reducer
   return {
     username
   }

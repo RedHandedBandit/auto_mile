@@ -19,11 +19,7 @@ class Login extends Component {
         const { email, password } = this.state
         axios.post('/auth/login', {email, password}).then( res => {
             this.props.employee(res.data)
-            this.props.history.push('/personal')
-            this.setState({
-                email: '',
-                password: ''
-            })
+            this.props.history.push('/wizard/personal')
         })
         .catch(error => console.log(error))
     }

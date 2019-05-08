@@ -95,7 +95,7 @@ class Register extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    return reduxState.username
+    return reduxState.reducer.username
 }
 
 const dispatchToProps = {

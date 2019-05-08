@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { personalInfo } from './../../../ducks/reducers/customerReducer';
+import { Link } from 'react-router-dom';
 
 class Personal extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             firstname: '',
             lastname: '',
@@ -29,6 +32,11 @@ class Personal extends Component {
             homePhone: '',
             mobilePhone: ''
         })
+    }
+    
+    addPersonalInfo = () => {
+        const { firstname, lastname, company, email, homePhone, mobilePhone } = this.state
+        this.props.personalInfo({firstname, lastname, company, email, homePhone, mobilePhone})
     }
 
     render(){
@@ -78,11 +86,22 @@ class Personal extends Component {
                 </label>
                 <div> 
                     <button onClick={() => this.cancelBtn()}> cancel </button>
-                    <button> next </button>
+                    <Link to='/wizard/shipping'> 
+                        <button onClick={() => this.addPersonalInfo()} > next </button>
+                    </Link>
                 </div>
             </div>
         )
     }
 }
 
-export default Personal
+const mapStateToProps = (reduxState) => {
+    const {firstname, lastname, company, email, homePhone, mobilePhone } = reduxState
+    return { firstname, lastname, company, email, homePhone, mobilePhone }
+}
+
+const dispatchToProps = {
+    personalInfo
+}
+
+export default connect(mapStateToProps, dispatchToProps)(Personal)
