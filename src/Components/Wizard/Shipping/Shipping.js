@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { shippingInfo } from './../../../ducks/reducers/customerReducer';
+import { Link } from 'react-router-dom';
 
 
 class Shipping extends Component {
@@ -17,6 +20,11 @@ class Shipping extends Component {
         this.setState({
             [prop]: val
         })
+    }
+
+    addShippingInfo = () => {
+        const { hAddy, hCity, hState, hZipCode, hCountry } = this.state
+        this.props.shippingInfo({ hAddy, hCity, hState, hZipCode, hCountry })
     }
 
     render(){
@@ -60,11 +68,24 @@ class Shipping extends Component {
                             value={this.state.hCountry} />
                     </label>
                 </div>
-                <button> previous </button>
-                <button> next </button>
+                <Link to="/wizard/personal"> 
+                    <button onClick={() => this.addShippingInfo()} > previous </button> 
+                </Link>
+                <Link to="/wizard/billing"> 
+                    <button onClick={() => this.addShippingInfo()}> next </button>
+                </Link>
             </div>
         )
     }
 }
 
-export default Shipping
+const mapStateToProps = (reduxState) => {
+    const { hAddy, hCity, hState, hCountry, hZipCode } = reduxState;
+    return { hAddy, hCity, hState, hCountry, hZipCode }
+}
+
+const dispatchStateToProps = {
+    shippingInfo
+}
+
+export default connect(mapStateToProps, dispatchStateToProps)(Shipping)

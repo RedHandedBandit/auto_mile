@@ -23,7 +23,11 @@ massive(CONNECTION_STRING).then( db => {
     app.listen(SERVER_PORT, console.log(` if you are quiet you can hear port ${SERVER_PORT}`))
 })
 
+//auth
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout) 
 app.get('/auth/me', authCtrl.checkMe)
+
+//customer 
+app.post('/api/addCustomer')

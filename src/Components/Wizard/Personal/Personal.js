@@ -20,7 +20,6 @@ class Personal extends Component {
         this.setState({
             [prop]: val
         })
-        console.log(this.state)
     }
 
     cancelBtn = () => {

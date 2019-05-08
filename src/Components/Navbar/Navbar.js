@@ -34,7 +34,7 @@ class Navbar extends Component {
                         <span className="fas fa-bars hamy"> </span>
                             <div className="dropdown-content">
                                 {this.props.username && <span> {this.props.username} </span>}
-                                <Link to="/personal"> <span> Home </span></Link>
+                                <Link to="/wizard/personal"> <span> Home </span></Link>
                                 <Link to="/admin"> <span> view customers </span> </Link>
                                 <Link to="/profile">  <span> edit profile </span> </Link>
                                 <span onClick={() => this.logout()} > logout </span>

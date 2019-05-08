@@ -54,6 +54,7 @@ export default function customerReducer(state = initialState, action) {
             return { ...state, firstname, lastname, company, homePhone, mobilePhone, email }
         case SHIPPING_INFO:
             const {hAddy, hCity, hState, hZipcode, hCountry} = payload
+            console.log('shipping info reduxstate', state)
             return { ...state, hAddy, hCity, hState, hZipcode, hCountry}
         case BILLING_INFO:
             const { bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code } = payload
