@@ -31,6 +31,7 @@ class Billing extends Component {
     }
 
     addNewCustomer = () => {
+        console.log('does add new customer even fire?', this.props)
         const newCustomer = {
             firstname: this.props.firstname,
             lastname: this.props.lastname,
@@ -52,13 +53,14 @@ class Billing extends Component {
             expire: this.state.expire,
             code: this.state.code
         }
-
+        console.log('newCustomer', newCustomer)
         axios.post('/api/addCustomer', newCustomer).then( res => {
             console.log('did this work???', res)
         })
     }
 
     render(){
+        console.log(this.props)
         return (
             <div>
                 <div>
@@ -123,7 +125,7 @@ class Billing extends Component {
                         <Link to="/wizard/shipping"> 
                             <button onClick={() => this.addBillingInfo()}> previous </button>
                         </Link>
-                        <button> Complete Order </button>
+                        <button onClick={() => this.addNewCustomer()}> Complete Order </button>
                     </div>
                 </div>
             </div>
@@ -134,7 +136,7 @@ class Billing extends Component {
 const mapStateToProps = (reduxState) => {
     const {
         firstname, lastname, company, homePhone, mobilePhone, email, hAddy, hCity, hState, hZipCode, hCountry, bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code
-     } = reduxState
+     } = reduxState.customer
     return {
         firstname, lastname, company, homePhone, mobilePhone, email, hAddy, hCity, hState, hZipCode, hCountry, bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code
     }

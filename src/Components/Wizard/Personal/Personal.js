@@ -95,7 +95,7 @@ class Personal extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    const {firstname, lastname, company, email, homePhone, mobilePhone } = reduxState
+    const {firstname, lastname, company, email, homePhone, mobilePhone } = reduxState.customer
     return { firstname, lastname, company, email, homePhone, mobilePhone }
 }
 

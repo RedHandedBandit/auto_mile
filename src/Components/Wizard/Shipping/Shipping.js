@@ -80,7 +80,7 @@ class Shipping extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    const { hAddy, hCity, hState, hCountry, hZipCode } = reduxState;
+    const { hAddy, hCity, hState, hCountry, hZipCode } = reduxState.customer;
     return { hAddy, hCity, hState, hCountry, hZipCode }
 }
 
