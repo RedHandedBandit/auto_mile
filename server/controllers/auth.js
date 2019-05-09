@@ -59,10 +59,27 @@ module.exports = {
 
     getEmployeeInfo: (req, res) => {
         const db = req.app.get('db')
-        const {login_id} = req.session
+        const {login_id} = req.session.user
+        // console.log('req.session', req.session)
+        // console.log('req.body', req.body)
+        // console.log(login_id)
 
         db.getSingleEmployee({login_id}).then( response => {
             res.status(200).send(response)
+        })
+    },
+
+    editEmployeeInfo: async (req, res) => {
+        const db = req.app.get('db')
+        const { firstname, lastname, username, email, password } = req.body
+        const {id} = req.params
+        // const {hash} = req.session.user
+
+        const saltNewPassword = bcrypt.genSaltSync(10);
+        const hashNewPassword = bcrypt.hashSync(password, saltNewPassword)
+
+        db.editEmployeeInfo({id, firstname, lastname, username, email, hashNewPassword}).then( info => {
+            res.status(200).send(info)
         })
     }
 }

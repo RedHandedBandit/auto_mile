@@ -12,7 +12,6 @@ function App(props) {
   axios.get('/auth/me').then( res => {
     //reduxstate
     props.employee(res.data)
-    console.log('app res.data', res.data)
   })
   .catch(error => console.log('nope', error))
   return (

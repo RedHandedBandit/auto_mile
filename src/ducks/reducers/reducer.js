@@ -22,7 +22,6 @@ export default function reducer(state = initialState, action) {
     switch(type) {
         case EMPLOYEE:
             const { firstname, lastname, email, password, username, phone } = payload
-            console.log('username tracker', username)
             return { ...state, firstname, lastname, email, password, username, phone}
         default: 
             return state;
