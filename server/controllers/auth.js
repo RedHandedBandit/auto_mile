@@ -55,5 +55,14 @@ module.exports = {
         if(req.session.user) {
             res.status(200).send(req.session.user)
         } else { res.sendStatus(403) }
+    },
+
+    getEmployeeInfo: (req, res) => {
+        const db = req.app.get('db')
+        const {login_id} = req.session
+
+        db.getSingleEmployee({login_id}).then( response => {
+            res.status(200).send(response)
+        })
     }
 }

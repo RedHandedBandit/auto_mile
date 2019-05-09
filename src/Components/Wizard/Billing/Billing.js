@@ -125,7 +125,9 @@ class Billing extends Component {
                         <Link to="/wizard/shipping"> 
                             <button onClick={() => this.addBillingInfo()}> previous </button>
                         </Link>
-                        <button onClick={() => this.addNewCustomer()}> Complete Order </button>
+                        <Link to='/wizard/completePurchase' > 
+                            <button onClick={() => this.addNewCustomer()}> Complete Order </button>
+                        </Link>
                     </div>
                 </div>
             </div>

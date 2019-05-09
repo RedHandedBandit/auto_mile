@@ -1,0 +1,47 @@
+.main-div-purchase {
+    border: solid black;
+    height: 100vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+}
+
+.logo-div {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    height: 50vh;
+    border: solid red;
+}
+
+.fa-check-circle {
+    font-size: 55px;
+    background-color: white;
+    color: rgb(25, 227, 25);
+    border: solid blue;
+    position: absolute;
+    bottom: 250px;
+}
+
+@keyframes slide-in {
+    from {
+        bottom: 100%;
+        width: 50%
+    }
+
+    50% {
+        bottom: 125px;
+        width: 50%;
+    }
+
+    to {
+        bottom: 250px;
+        width: 50%;
+    }
+}

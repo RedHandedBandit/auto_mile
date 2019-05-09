@@ -29,6 +29,7 @@ app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout) 
 app.get('/auth/me', authCtrl.checkMe)
+app.get('/auth/employeeInfo', authCtrl.getEmployeeInfo)
 
 //customer 
 app.post('/api/addCustomer', infoCtrl.addCustomerInfo)
