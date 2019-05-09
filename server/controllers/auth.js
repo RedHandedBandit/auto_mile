@@ -71,12 +71,14 @@ module.exports = {
 
     editEmployeeInfo: async (req, res) => {
         const db = req.app.get('db')
-        const { firstname, lastname, username, email, password } = req.body
+        const { firstname, lastname, username, email, newPassword } = req.body
         const {id} = req.params
+        console.log(req.body)
+        console.log(req.params)
         // const {hash} = req.session.user
 
         const saltNewPassword = bcrypt.genSaltSync(10);
-        const hashNewPassword = bcrypt.hashSync(password, saltNewPassword)
+        const hashNewPassword = bcrypt.hashSync(newPassword, saltNewPassword)
 
         db.editEmployeeInfo({id, firstname, lastname, username, email, hashNewPassword}).then( info => {
             res.status(200).send(info)

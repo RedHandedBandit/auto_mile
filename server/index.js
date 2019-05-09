@@ -30,7 +30,7 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout) 
 app.get('/auth/me', authCtrl.checkMe)
 app.get('/auth/employeeInfo', authCtrl.getEmployeeInfo)
-app.put('/auth/editEmployeeInfo', authCtrl.editEmployeeInfo)
+app.put('/auth/editEmployeeInfo/:id', authCtrl.editEmployeeInfo)
 
 //customer 
 app.post('/api/addCustomer', infoCtrl.addCustomerInfo)

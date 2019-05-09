@@ -12,40 +12,49 @@
 .logo-div {
     display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 	align-items: center;
-    align-content: center;
+	align-content: center;
     height: 50vh;
-    border: solid red;
+    // border: solid red;
 }
 
 .fa-check-circle {
     font-size: 55px;
     background-color: white;
     color: rgb(25, 227, 25);
-    border: solid blue;
+    // border: solid blue;
     position: absolute;
-    bottom: 0px;
-    animation: slide-in 2s ease-in;
+    bottom: -115px;
+    animation: slide-in .5s ease;
     animation-fill-mode: forwards;
     opacity: 0;
+    display: flex;
 }
 
 @keyframes slide-in {
-    from {
+    0% {
         top: 100%;
         opacity: 1;
         // width: 50%
     }
 
+    25% {
+        top: 600px;
+    }
+
     50% {
-        top: 125px;
+        top: 505px;
         // width: 50%;
     }
 
-    to {
-        top: 250px;
+    75% {
+        top: 450px;
+    }
+
+    100% {
+        top: 400px;
         opacity: 1;
         // width: 50%;
     }
