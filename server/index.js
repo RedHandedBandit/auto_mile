@@ -5,7 +5,15 @@ const session = require('express-session')
 const authCtrl = require('./controllers/auth')
 const infoCtrl = require('./controllers/info')
 
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
+const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, CLIENT_SECRET } = process.env
+
+const stripe = require("stripe")(CLIENT_SECRET);
+
+
+// stripe.charges.retrieve("ch_1EYftuIpLM6qy95C4Af9zenL", {
+//     api_key: "sk_test_6jRZfqAxN7fY80blOeeYlMll"
+//   });
+
 
 const app = express()
 app.use(express.json())
@@ -34,3 +42,19 @@ app.put('/auth/editEmployeeInfo/:id', authCtrl.editEmployeeInfo)
 
 //customer 
 app.post('/api/addCustomer', infoCtrl.addCustomerInfo)
+app.get('/api/customers', infoCtrl.getAllCustomerInfo)
+
+// stripe endpoint
+app.post('/save-stripe-token', async (req, res) => {
+    try {
+        let { status } = await stripe.charges.create({
+            amount: 2000,
+            currency: "usd",
+            description: 'example charge',
+            source: req.body
+        })
+        res.json(status)
+    } catch (err) {
+        res.status(500).end();
+    }
+})

@@ -29,38 +29,38 @@ class Shipping extends Component {
 
     render(){
         return (
-            <div>
-                <h1> Shipping </h1>
-                <div>
-                    <label> 
+            <div className="shipping_div">
+                <h1 className="shipping_h1"> Shipping </h1>
+                <div className="fullInfo_div">
+                    <label className="shipping_label"> 
                         <span> shipping address </span>
                         <input
                             onChange={(e) => this.handleInputChange('hAddy', e.target.value)}
                             type='text'
                             value={this.state.hAddy} />
                     </label>
-                    <label> 
+                    <label className="city_label"> 
                         <span> city </span>
                         <input
                             onChange={(e) => this.handleInputChange('hCity', e.target.value)}
                             type='text'
                             value={this.state.hCity} />
                     </label>
-                    <label> 
+                    <label className="state_label"> 
                         <span> state </span>
                         <input
                             onChange={(e) => this.handleInputChange('hState', e.target.value)}
                             type='text'
                             value={this.state.hState} />
                     </label>
-                    <label> 
+                    <label className="zip_label"> 
                         <span> zip code </span>
                         <input
                             onChange={(e) => this.handleInputChange('hZipCode', e.target.value)}
                             type='text'
                             value={this.state.hZipCode} />
                     </label>
-                    <label> 
+                    <label className="country_label"> 
                         <span> country </span>
                         <input
                             onChange={(e) => this.handleInputChange('hCountry', e.target.value)}
@@ -68,12 +68,18 @@ class Shipping extends Component {
                             value={this.state.hCountry} />
                     </label>
                 </div>
-                <Link to="/wizard/personal"> 
-                    <button onClick={() => this.addShippingInfo()} > previous </button> 
-                </Link>
-                <Link to="/wizard/billing"> 
-                    <button onClick={() => this.addShippingInfo()}> next </button>
-                </Link>
+                <div className="btn_div">
+                    <Link to="/wizard/personal"> 
+                        <button onClick={() => this.addShippingInfo()} > 
+                            <i className="fas fa-arrow-left"></i> 
+                        </button> 
+                    </Link>
+                    <Link to="/wizard/billing"> 
+                        <button onClick={() => this.addShippingInfo()}> 
+                            <i className="fas fa-arrow-right"></i>  
+                        </button>
+                    </Link>
+                </div>
             </div>
         )
     }

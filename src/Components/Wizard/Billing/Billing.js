@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { billingInfo } from './../../../ducks/reducers/customerReducer';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
+import swal from 'sweetalert';
+require('dotenv').config()
+
+
 
 class Billing extends Component {
     constructor(props){
@@ -18,6 +23,16 @@ class Billing extends Component {
             code: ''
         }
     }
+
+    onToken = async (token) => {
+       await fetch('/save-stripe-token', {
+          method: 'POST',
+          body: JSON.stringify(token),
+        }).then(response => {
+            console.log(11111111,response.email)
+        swal('Transation Complete!', '', 'success')
+        });
+      }
 
     handleInputChange = (prop, val) => {
         this.setState({
@@ -49,9 +64,9 @@ class Billing extends Component {
             billing_state: this.state.bState,
             billing_zipcode: +this.state.bZipCode,
             billing_country: this.state.bCountry,
-            card: this.state.cardNumber,
-            expire: this.state.expire,
-            code: this.state.code
+            // card: this.state.cardNumber,
+            // expire: this.state.expire,
+            // code: this.state.code
         }
         console.log('newCustomer', newCustomer)
         axios.post('/api/addCustomer', newCustomer).then( res => {
@@ -60,7 +75,7 @@ class Billing extends Component {
     }
 
     render(){
-        console.log(this.props)
+        
         return (
             <div>
                 <div>
@@ -100,27 +115,11 @@ class Billing extends Component {
                             type="text"
                             value={this.state.bCountry} />
                     </label>
-                    <label>
-                        <span> card # </span>
-                        <input
-                            onChange={(e) => this.handleInputChange('cardNumber', e.target.value)}
-                            type="text"
-                            value={this.state.cardNumber} />
-                    </label>
-                    <label>
-                        <span> expiration date </span>
-                        <input
-                            onChange={(e) => this.handleInputChange('expire', e.target.value)}
-                            type="text"
-                            value={this.state.expire} />
-                    </label>
-                    <label>
-                        <span> ccv </span>
-                        <input
-                            onChange={(e) => this.handleInputChange('code', e.target.value)}
-                            type="text"
-                            value={this.state.code} />
-                    </label>
+                        <div> Card Details </div>
+                        <StripeCheckout
+                            token={this.onToken}
+                            stripeKey='pk_test_mYd6jOwkm5YVyrT7OYwORmqo'
+                        />
                     <div>
                         <Link to="/wizard/shipping"> 
                             <button onClick={() => this.addBillingInfo()}> previous </button>

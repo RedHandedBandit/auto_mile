@@ -6,7 +6,6 @@ insert into customer (
     home_phone, 
     billing_address_id,
     home_address_id,
-    private_id,
     email
 ) values (
     ${firstname},
@@ -16,6 +15,5 @@ insert into customer (
     ${home_phone},
     ${billing_id},
     ${shipping_id},
-    ${private_id},
     ${email}
 );

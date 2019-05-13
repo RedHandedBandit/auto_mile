@@ -1,0 +1,108 @@
+$true-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.shipping_div {
+    // border: solid black .5px;
+    height: 100vh;
+    text-align: center;
+    font-family: $true-font;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.shipping_h1 {
+    // border: solid red .5px;
+    text-transform: uppercase;
+    font-size: 55px;
+    font-family: 'Cambay';
+}
+
+.fullInfo_div {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+    // border: solid red .5px;
+    width: 65%;
+}
+
+.fullInfo_div label {
+    // border: solid blue .5px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+label span {
+    margin: 5px;
+    padding: 5px;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    // border: solid black .5px;
+}
+
+.shipping_label {
+    font-size: 22px;
+    width: 100%;
+}
+
+.city_label {
+    width: 200px;
+}
+
+.city_label input {
+    width: 180px;
+}
+
+.state_label {
+    width: 80px;
+}
+
+.country_label input {
+    width: 180px;
+}
+
+.btn_div {
+    // border: solid red .5px;
+    width: 65%;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    // border: solid blue .5px;
+    background: none;
+    padding: 5px;
+    margin: 5px;
+    width: 75px;
+    background-color: #34B3B1;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fas {
+    font-size: 25px;
+    color: white;
+    width: 60px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: white;
+    border: solid #34B3B1 .5px;
+}
+
+.fas:hover {
+    color: #34B3B1;
+}

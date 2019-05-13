@@ -27,7 +27,7 @@
     // border: solid blue;
     position: absolute;
     bottom: -115px;
-    animation: slide-in .5s ease;
+    animation: slide-in .5s ease-in;
     animation-fill-mode: forwards;
     opacity: 0;
     display: flex;
@@ -35,27 +35,64 @@
 
 @keyframes slide-in {
     0% {
-        top: 100%;
+        top: 450px;
         opacity: 1;
-        // width: 50%
     }
 
-    25% {
-        top: 600px;
+    5% {
+        top: 447px;
+    }
+
+    10% {
+        top: 444px;
+    }
+
+    15% {
+        top: 441px;
+    }
+
+    20% {
+        top: 438px;
     }
 
     50% {
-        top: 505px;
-        // width: 50%;
+        top: 435px;
+    }
+
+    55% {
+        top: 432px;
+    }
+
+    65% {
+        top: 429px;
+    }
+
+    70% {
+        top: 426px;
     }
 
     75% {
-        top: 450px;
+        top: 423px;
+    }
+
+    80% {
+        top: 420px;
+    }
+
+    85% {
+        top: 417px;
+    }
+
+    90% {
+        top: 414px;
+    }
+
+    95% {
+        top: 411px;
     }
 
     100% {
-        top: 400px;
+        top: 408px;
         opacity: 1;
-        // width: 50%;
     }
 }

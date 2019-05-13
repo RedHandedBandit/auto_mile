@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import {employee} from './ducks/reducers/reducer';
 
 function App(props) {
-
   axios.get('/auth/me').then( res => {
     //reduxstate
     props.employee(res.data)
