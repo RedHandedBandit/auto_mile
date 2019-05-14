@@ -27,6 +27,15 @@ class Admin extends Component {
         })
     }
 
+    deleteCustomerInfo = (id) => {
+        axios.delete(`/api/delete/${id}`).then( res => {
+            this.componentDidMount(res.data)
+            this.setState({
+                selectedIndex: 0
+            })
+        })
+    }
+
     render(){
         console.log(this.state.customerList)
         const { selectedIndex } = this.state
@@ -57,6 +66,8 @@ class Admin extends Component {
                         homePhone={this.state.customerList[selectedIndex].home_phone} 
                         mobilePhone={this.state.customerList[selectedIndex].mobile_phone} 
                         company={this.state.customerList[selectedIndex].company} 
+                        deleteCustomer={this.deleteCustomerInfo}
+                        id={this.state.customerList[selectedIndex].customer_id}
                     />
             </div>
         )

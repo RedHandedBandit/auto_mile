@@ -42,7 +42,7 @@ const AdminCustomerInfo = (props) => (
             <span className="title_span"> Country: </span>
             <span className="info_span"> { props.country } </span>
         </label>
-        <button> Delete </button>
+        <button onClick={() => props.deleteCustomer(props.id)} > Delete </button>
     </div>
 )
 
