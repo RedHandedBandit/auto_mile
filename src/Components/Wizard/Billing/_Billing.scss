@@ -1,0 +1,17 @@
+.billing_btnDiv {
+    border: solid black;
+}
+
+.billing_btnDiv button {
+    background: rgb(109,188,235);
+    background: -moz-linear-gradient(top,  rgba(109,188,235,1) 0%, rgba(52,163,228,1) 50%, rgba(13,148,224,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    background: linear-gradient(to bottom,  rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dbceb', endColorstr='#0d94e0',GradientType=0 );
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 150px;
+    text-transform: capitalize;
+    height: 38px;
+}

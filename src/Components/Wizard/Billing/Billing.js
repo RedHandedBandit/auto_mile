@@ -120,7 +120,7 @@ class Billing extends Component {
                             token={this.onToken}
                             stripeKey='pk_test_mYd6jOwkm5YVyrT7OYwORmqo'
                         />
-                    <div>
+                    <div className="billing_btnDiv">
                         <Link to="/wizard/shipping"> 
                             <button onClick={() => this.addBillingInfo()}> previous </button>
                         </Link>

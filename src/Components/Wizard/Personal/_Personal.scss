@@ -1,0 +1,55 @@
+.personal_div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    // border: solid black .5px;
+    width: 100%;
+}
+
+.allInfo_div {
+    // border: solid red .5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 5px;
+}
+
+label h3 {
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+label input {
+    width: 500px;
+    font-size: 14px;
+}
+
+.btn_div {
+    // border: solid blue .5px;
+    width: 520px;
+}
+
+.btn_div button {
+    background: #36A4E4;
+    color: white;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.btn_div button:hover {
+    border: solid #36A4E4 .5px;
+    background-color: white;
+    color: #36A4E4;
+    transition-duration: .2s;
+}
+
+.personal_info_h1 {
+    font-family: 'Kodchasan';
+    font-size: 55px;
+}

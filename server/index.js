@@ -4,6 +4,7 @@ const massive = require('massive');
 const session = require('express-session')
 const authCtrl = require('./controllers/auth')
 const infoCtrl = require('./controllers/info')
+const middleware = require('./middleware/authMiddleware')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, CLIENT_SECRET } = process.env
 
@@ -42,7 +43,7 @@ app.put('/auth/editEmployeeInfo/:id', authCtrl.editEmployeeInfo)
 
 //customer 
 app.post('/api/addCustomer', infoCtrl.addCustomerInfo)
-app.get('/api/customers', infoCtrl.getAllCustomerInfo)
+app.get('/api/customers', middleware.adminsOnly, infoCtrl.getAllCustomerInfo)
 
 // stripe endpoint
 app.post('/save-stripe-token', async (req, res) => {
