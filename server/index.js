@@ -11,11 +11,6 @@ const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, CLIENT_SECRET } = proces
 const stripe = require("stripe")(CLIENT_SECRET);
 
 
-// stripe.charges.retrieve("ch_1EYftuIpLM6qy95C4Af9zenL", {
-//     api_key: "sk_test_6jRZfqAxN7fY80blOeeYlMll"
-//   });
-
-
 const app = express()
 app.use(express.json())
 app.use(session({
