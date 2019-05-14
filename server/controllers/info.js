@@ -40,5 +40,14 @@ module.exports = {
         db.getCustomers().then( response => {
             res.status(200).send(response)
         })
+    },
+
+    deleteCustomerInfo: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+
+        db.deleteCustomerInfo({id}).then( response => {
+            res.status(200).send(response)
+        }). catch(err => console.log('delete button didnt work you idiot', err))
     }
 }

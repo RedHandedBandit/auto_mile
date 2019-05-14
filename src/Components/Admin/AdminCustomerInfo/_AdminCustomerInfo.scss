@@ -1,0 +1,20 @@
+.customerInfo_div {
+    border: solid black .5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-transform: capitalize;
+    font-family: $true-font;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.title_span {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.info_span {
+    font-size: 15px;
+}

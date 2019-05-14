@@ -6,7 +6,8 @@ class Admin extends Component {
     constructor(){
         super()
         this.state = {
-            customerList: []
+            customerList: [{}],
+            selectedIndex: 0
         }
     }
 
@@ -16,21 +17,47 @@ class Admin extends Component {
                 customerList: res.data
             })
         })
-        console.log(this.state)
+    }
+
+    selectedCustomer = (id) => {
+        // const { customer_id } = this.state.customerList[0]
+        console.log('show me the money',id)
+        this.setState({
+            selectedIndex: id
+        })
     }
 
     render(){
-        const fullCustomerList = this.state.customerList.map((el, i) => {
+        console.log(this.state.customerList)
+        const { selectedIndex } = this.state
+        const allCustomerNames = this.state.customerList.map((el, i) => {
             return (
-                <div>
-                    <span> {el.firstname} {el.lastname} </span>
-                    <AdminCustomerInfo />
+                <div key={i} className="mapped_div" >
+                    <span 
+                        className="list_name"
+                        onClick={() => this.selectedCustomer(i)} >
+                             {el.firstname} {el.lastname} 
+                    </span>
                 </div>
             )
         })
         return (
-            <div>
-                I am Admin
+            <div className="admin_div">
+            <h1> Customer Information </h1>
+                <div className="theNameDiv">{allCustomerNames}</div>
+                    <AdminCustomerInfo 
+                        firstname={this.state.customerList[selectedIndex].firstname} 
+                        lastname={this.state.customerList[selectedIndex].lastname} 
+                        address={this.state.customerList[selectedIndex].address} 
+                        city={this.state.customerList[selectedIndex].city} 
+                        state={this.state.customerList[selectedIndex].state} 
+                        zipcode={this.state.customerList[selectedIndex].zipcode} 
+                        country={this.state.customerList[selectedIndex].country} 
+                        email={this.state.customerList[selectedIndex].email} 
+                        homePhone={this.state.customerList[selectedIndex].home_phone} 
+                        mobilePhone={this.state.customerList[selectedIndex].mobile_phone} 
+                        company={this.state.customerList[selectedIndex].company} 
+                    />
             </div>
         )
     }

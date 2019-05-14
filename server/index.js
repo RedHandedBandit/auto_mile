@@ -39,6 +39,7 @@ app.put('/auth/editEmployeeInfo/:id', authCtrl.editEmployeeInfo)
 //customer 
 app.post('/api/addCustomer', infoCtrl.addCustomerInfo)
 app.get('/api/customers', middleware.adminsOnly, infoCtrl.getAllCustomerInfo)
+app.delete('/api/delete/:id', infoCtrl.deleteCustomerInfo)
 
 // stripe endpoint
 app.post('/save-stripe-token', async (req, res) => {

@@ -1,0 +1,32 @@
+.admin_div {
+    border: solid black .5px;
+    height: 100vh;
+    width: 100%;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: space-between;
+}
+
+.theNameDiv {
+    border: solid black .5px;
+    width: 50%;
+    height: 150px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.mapped_div {
+    // border: solid black .5px;
+    width: 50%;
+    font-family: $true-font;
+    text-transform: capitalize;
+}
+
+.list_name {
+    cursor: pointer;
+}
