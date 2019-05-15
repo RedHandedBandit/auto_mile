@@ -8,14 +8,17 @@ module.exports = {
             firstname, lastname, company, home_phone, mobile_phone, email, shipping_addy, shipping_city, shipping_state, shipping_zipcode, shipping_country, billing_addy, billing_city, billing_state, billing_zipcode, billing_country 
         } = req.body
         const db = req.app.get('db')
+        // console.log('this is req.body from add',req.body)
 
         const billingAddress = await db.addBillingAddress({billing_addy, billing_city, billing_state, billing_zipcode, billing_country})
+        // console.log('billingAddress', billingAddress)
         const billing_id = billingAddress[0].address_id
-        console.log('billing id', billing_id)
+        // console.log('billing id', billing_id)
 
         const shippingAddress = await db.addShippingAddress({shipping_addy, shipping_city, shipping_state, shipping_zipcode, shipping_country})
+        // console.log('shippingAddress', shippingAddress)
         const shipping_id = shippingAddress[0].address_id
-        console.log('shipping_id', shipping_id)
+        // console.log('shipping_id', shipping_id)
 
         // const saltCard = bcrypt.genSaltSync(10)
         // const hashCard = bcrypt.hashSync(card, saltCard)
@@ -29,7 +32,7 @@ module.exports = {
         // console.log('private id', private_id)
 
         const fullCustomerInfo = await db.addCustomer({ firstname, lastname, company, home_phone, mobile_phone, email, billing_id, shipping_id })
-        console.log('fullCustomerInfo', fullCustomerInfo)
+        // console.log('fullCustomerInfo', fullCustomerInfo)
 
         res.status(200).send(fullCustomerInfo)
     },

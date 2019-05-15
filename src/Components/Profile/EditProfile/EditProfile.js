@@ -16,7 +16,7 @@ class EditProfile extends Component {
             newPassword: '',
             comfirmedPassword: ''
         }
-        console.log(this.props)
+        // console.log(this.props)
     }
 
     componentDidMount = async () => {
@@ -24,7 +24,7 @@ class EditProfile extends Component {
             this.setState({
                 employeeInfo: res.data[0]
             })
-            console.log(this.state)
+            // console.log(this.state)
         
     }
 
@@ -32,7 +32,7 @@ class EditProfile extends Component {
         this.setState({
             [prop]: val
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     saveChanges = (id) => {
@@ -57,60 +57,61 @@ class EditProfile extends Component {
     }
 
     render(){
-        console.log(this.state.employeeInfo.login_id)
+        // console.log(this.state.employeeInfo.login_id)
         return (
-            <div>
-                I am EditProfile
-                <div>
+            <div className="editProfile_div">
+                <div className="label_div">
                     <label>
-                        <span> first name </span>
+                        <div> first name </div>
                         <input
                             onChange={(e) => this.handleInputChange('firstname', e.target.value)}
                             type="text"
                             value={this.state.firstname} />
                     </label>
                     <label>
-                        <span> last name </span>
+                        <div> last name </div>
                         <input
                             onChange={(e) => this.handleInputChange('lastname', e.target.value)}
                             type="text"
                             value={this.state.lastname} />
                     </label>
                     <label>
-                        <span> username </span>
+                        <div> username </div>
                         <input 
                             onChange={(e) => this.handleInputChange('username', e.target.value)}
                             type="text"
                             value={this.state.username} />
                     </label>
                     <label>
-                        <span> email </span>
+                        <div> email </div>
                         <input
                             onChange={(e) => this.handleInputChange('email', e.target.value)}
                             type="text"
                             value={this.state.email} />
                     </label>
                     <label>
-                        <span> new password </span>
+                        <div> new password </div>
                         <input
                             onChange={(e) => this.handleInputChange('newPassword', e.target.value)}
                             type="text"
                             value={this.state.newPassword} />
                     </label>
                     <label>
-                        <span> confirm password </span>
+                        <div> confirm password </div>
                         <input
                             onChange={(e) => this.handleInputChange('comfirmedPassword', e.target.value)}
                             type="text"
                             value={this.state.comfirmedPassword} />
                     </label>
-                    <div> 
-                        <button onClick={() => this.saveChanges(this.state.employeeInfo.login_id)} > 
-                            save changes
-                        </button> 
+                    <div className="editProfileBtn_div"> 
                         <Link to="/profile" >
-                            <button> cancel </button> 
+                            <button className="editProfileCancel_btn"> cancel </button> 
                         </Link>
+                        <button
+                            className="editProfileSave_btn"
+                             onClick={() => this.saveChanges(this.state.employeeInfo.login_id)} > 
+                            save
+                        </button> 
                     </div>
 
                 </div>

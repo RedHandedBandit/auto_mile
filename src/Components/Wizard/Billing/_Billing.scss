@@ -1,5 +1,6 @@
 .billing_btnDiv {
-    border: solid black;
+    // border: solid black;
+    margin-top: 10px;
 }
 
 .billing_btnDiv button {
@@ -14,4 +15,31 @@
     width: 150px;
     text-transform: capitalize;
     height: 38px;
+}
+
+.billing_div {
+    border: solid black .5px;
+    margin: 5px;
+    text-align: center;
+    font-family: $true-font;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.fullInfo_btnDiv {
+    border: solid black .5px;
+}
+
+.fullInfo_btnDiv h1 {
+    text-transform: uppercase;
+    font-size: 55px;
+    font-family: 'Cambay';
+}
+
+.fullInfo_btnDiv label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }

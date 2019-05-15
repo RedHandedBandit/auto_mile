@@ -50,17 +50,17 @@ export default function customerReducer(state = initialState, action) {
     switch(type) {
         case PERSONAL_INFO:
             const { firstname, lastname, company, homePhone, mobilePhone, email } = payload
-            console.log('personalInfo redux', payload)
+            // console.log('personalInfo redux', payload)
             return { ...state, firstname, lastname, company, homePhone, mobilePhone, email }
         case SHIPPING_INFO:
-            const {hAddy, hCity, hState, hZipcode, hCountry} = payload
-            console.log('shipping info payload', payload)
-            console.log('this is state in redux', state)
-            return { ...state, hAddy, hCity, hState, hZipcode, hCountry}
+            const {hAddy, hCity, hState, hZipCode, hCountry} = payload
+            // console.log('shipping info payload', payload)
+            // console.log('this is state in redux', state)
+            return { ...state, hAddy, hCity, hState, hZipCode, hCountry}
         case BILLING_INFO:
             const { bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code } = payload
-            console.log('billing info payload ', payload)
-            console.log('this is state in redux', state)
+            // console.log('billing info payload ', payload)
+            // console.log('this is state in redux', state)
             return { ...state, bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code }
         default:
             return state;

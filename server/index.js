@@ -24,7 +24,7 @@ app.use(session({
 
 massive(CONNECTION_STRING).then( db => {
     app.set('db', db)
-    console.log('database online')
+    // console.log('database online')
     app.listen(SERVER_PORT, console.log(` if you are quiet you can hear port ${SERVER_PORT}`))
 })
 

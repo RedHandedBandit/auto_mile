@@ -1,0 +1,67 @@
+.editProfile_div {
+    border: solid black .5px;
+    height: 100vh;
+}
+
+.label_div {
+    border: solid red .5px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: space-around;
+    margin-top: 75px;
+}
+
+label input {
+    border: solid black .5px;
+    border-radius: 2px;
+}
+
+.editProfileBtn_div {
+    display: flex;
+    justify-content: space-around;
+    // border: solid black .5px;
+    width: 600px;
+}
+
+.editProfileCancel_btn {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: white;
+}
+
+.editProfileSave_btn {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: white;
+}
+
+.editProfileCancel_btn:hover {
+    color: rgb(109,188,235);
+    color: -moz-linear-gradient(top, rgba(109,188,235,1) 0%, rgba(52,163,228,1) 50%, rgba(13,148,224,1) 100%);
+    color: -webkit-linear-gradient(top, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    color: linear-gradient(to bottom, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dbceb', endColorstr='#0d94e0',GradientType=0 );
+    background: white;
+    border: solid rgb(109,188,235) .5px;
+    transition-duration: .4s;
+}
+
+.editProfileSave_btn:hover {
+    color: rgb(109,188,235);
+    color: -moz-linear-gradient(top, rgba(109,188,235,1) 0%, rgba(52,163,228,1) 50%, rgba(13,148,224,1) 100%);
+    color: -webkit-linear-gradient(top, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    color: linear-gradient(to bottom, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dbceb', endColorstr='#0d94e0',GradientType=0 );
+    background: white;
+    border: solid rgb(109,188,235) .5px;
+    transition-duration: .4s;
+}

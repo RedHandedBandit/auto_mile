@@ -1,31 +1,82 @@
 .register_div {
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: space-around;
+    /* border: solid black .5px; */
     height: 100vh;
-    margin-top: 45px;
-}
-
-.register_info {
-    border: solid black .5px;
-    width: 70%;
+    text-align: center;
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
+    align-content: space-around;
+    background: rgb(54,164,228);
+    background: -moz-linear-gradient(-45deg, rgba(54,164,228,1) 0%, rgba(31,81,198,1) 100%, rgba(54,164,228,1) 100%, rgba(31,81,198,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(54,164,228,1) 0%,rgba(31,81,198,1) 100%,rgba(54,164,228,1) 100%,rgba(31,81,198,1) 100%);
+    background: linear-gradient(135deg, rgba(54,164,228,1) 0%,rgba(31,81,198,1) 100%,rgba(54,164,228,1) 100%,rgba(31,81,198,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36a4e4', endColorstr='#1f51c6',GradientType=1 );
+}
+
+.register_info {
+    /* border: solid red .5px; */
+    width: 60%;
+}
+
+.inputBox_div {
+    /* border: solid green .5px; */
+    margin: 5px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
 	align-content: space-around;
 }
 
 .register_info h2 {
-    font-size: 35px;
+    font-size: 55px;
+    font-family: 'camphor';
     text-transform: uppercase;
+    color: black;
+}
+
+section input {
+    width: 355px;
+    background: none;
+    border: solid #5e5656 .5px;
+    border-radius: 5px;
+}
+
+section {
+    /* border: solid blue .5px; */
+    margin: 5px;
+    text-align: left;
+}
+
+section div {
+    margin-left: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: 'lucida';
+    color: black;
+}
+
+.btn_footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn_footer button {
+    font-size: 17px;
+    width: 150px;
+    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 1px;
-    border-bottom: solid black;
-    margin: 25px;
+    background: none;
+    border: none;
+    font-weight: 600;
+}
+
+.btn_footer button:hover {
+    border-bottom: solid black .5px;
+    border-radius: 0px;
 }
 

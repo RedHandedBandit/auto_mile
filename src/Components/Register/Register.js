@@ -47,46 +47,58 @@ class Register extends Component {
                 <div className="register_info">
                     <h2> Register </h2>
                     <div className="inputBox_div">
-                        <span> first name </span>
-                        <input
-                            // placeholder="First Name"
-                            onChange={(e) => this.handleInputChange('firstname', e.target.value)}
-                            type="text"
-                            value={this.state.firstname} />
-                        <span> last name </span>
-                        <input
-                            // placeholder="Last Name"
-                            onChange={(e) => this.handleInputChange('lastname', e.target.value)}
-                            type="text"
-                            value={this.state.lastname} />
-                        <span> phone # </span>
-                        <input 
-                            // placeholder="phone #"
-                            onChange={(e) => this.handleInputChange('phone', e.target.value)}
-                            type="text"
-                            value={this.state.phone} />
-                        <span> username </span>
-                        <input
-                            // placeholder="username"
-                            onChange={(e) => this.handleInputChange('username', e.target.value)}
-                            type="text"
-                            value={this.state.username} />
-                        <span> email </span>
-                        <input
-                            // placeholder="email"
-                            onChange={(e) => this.handleInputChange('email', e.target.value)}
-                            type="text"
-                            value={this.state.email} />
-                        <span> password </span>
-                        <input
-                            // placeholder="password"
-                            onChange={(e) => this.handleInputChange('password', e.target.value)}
-                            type="text"
-                            value={this.state.password} />
+                        <section>
+                            <div> first name </div>
+                            <input
+                                // placeholder="First Name"
+                                onChange={(e) => this.handleInputChange('firstname', e.target.value)}
+                                type="text"
+                                value={this.state.firstname} />
+                        </section>
+                        <section>
+                            <div> last name </div>
+                            <input
+                                // placeholder="Last Name"
+                                onChange={(e) => this.handleInputChange('lastname', e.target.value)}
+                                type="text"
+                                value={this.state.lastname} />
+                        </section>
+                        <section>
+                            <div> phone # </div>
+                            <input 
+                                // placeholder="phone #"
+                                onChange={(e) => this.handleInputChange('phone', e.target.value)}
+                                type="text"
+                                value={this.state.phone} />
+                        </section>
+                        <section>
+                            <div> username </div>
+                            <input
+                                // placeholder="username"
+                                onChange={(e) => this.handleInputChange('username', e.target.value)}
+                                type="text"
+                                value={this.state.username} />
+                        </section>
+                        <section>
+                            <div> email </div>
+                            <input
+                                // placeholder="email"
+                                onChange={(e) => this.handleInputChange('email', e.target.value)}
+                                type="text"
+                                value={this.state.email} />
+                        </section>
+                        <section>
+                            <div> password </div>
+                            <input
+                                // placeholder="password"
+                                onChange={(e) => this.handleInputChange('password', e.target.value)}
+                                type="text"
+                                value={this.state.password} />
+                        </section>
                     </div>
                     <footer className="btn_footer">
                         <button onClick={() => this.register()}> Complete </button>
-                        <Link to="/" > <button> Cancel </button> </Link>
+                        <Link to="/" > <button className="cancel_register"> Cancel </button> </Link>
                     </footer>
                 </div>
             </div>

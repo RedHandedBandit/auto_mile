@@ -23,31 +23,32 @@ class Profile extends Component {
         const allEmployeeInfo = this.state.employeeInfo.map((el, i) => {
             return (
                 <div key={i}>
-                    <div>
+                    <div className="editPic_div">
                         <img src={el.image} alt="profile Pic" />
-                        <button> edit profile picture </button>
+                        <button className="profilePic_btn"> edit profile picture </button>
                     </div>
-                    <div>
-                    <label>
-                        <h4> first name </h4>
-                        <div> {el.firstname} </div>
-                    </label>
-                    <label>
-                        <h4> last name </h4>
-                        <div> {el.lastname} </div>
-                    </label>
-                    <label>
-                        <h4> username </h4>
-                        <div> {el.username} </div>
-                    </label>
-                    <label>
-                        <h4> email </h4>
-                        <div> {el.email} </div>
-                    </label>
-                    <label>
-                        <h4> password </h4>
-                        <div> unavailable </div>
-                    </label>
+                    <h1 className="profileInfo_h1"> Profile Information </h1> 
+                    <div className="profileLabel_div">
+                        <label>
+                            <h4> first name </h4>
+                            <div> {el.firstname} </div>
+                        </label>
+                        <label>
+                            <h4> last name </h4>
+                            <div> {el.lastname} </div>
+                        </label>
+                        <label>
+                            <h4> username </h4>
+                            <div> {el.username} </div>
+                        </label>
+                        <label>
+                            <h4> email </h4>
+                            <div> {el.email} </div>
+                        </label>
+                        <label>
+                            <h4> password </h4>
+                            <div> ********* </div>
+                        </label>
                     </div>
                 </div>
             )
@@ -55,9 +56,9 @@ class Profile extends Component {
         return (
             <div>
                 <div> {allEmployeeInfo} </div>
-                <div>
+                <div className="editBtn_div">
                     <Link to="/editProfile"> 
-                        <button> edit profile </button>
+                        <button className="editBtn_profile"> edit profile </button>
                     </Link>
                 </div>
             </div>

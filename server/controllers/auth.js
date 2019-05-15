@@ -37,7 +37,7 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
 
         const registeredUser = await db.registerUser({firstname, lastname, username, email, hash, phone})
-        console.log(2222222, registeredUser)
+        // console.log(2222222, registeredUser)
         const user = registeredUser[0]
 
         delete user.hash
@@ -73,8 +73,8 @@ module.exports = {
         const db = req.app.get('db')
         const { firstname, lastname, username, email, newPassword } = req.body
         const {id} = req.params
-        console.log(req.body)
-        console.log(req.params)
+        // console.log(req.body)
+        // console.log(req.params)
         // const {hash} = req.session.user
 
         const saltNewPassword = bcrypt.genSaltSync(10);

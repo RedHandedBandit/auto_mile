@@ -21,7 +21,7 @@ class Admin extends Component {
 
     selectedCustomer = (id) => {
         // const { customer_id } = this.state.customerList[0]
-        console.log('show me the money',id)
+        // console.log('show me the money',id)
         this.setState({
             selectedIndex: id
         })
@@ -37,7 +37,7 @@ class Admin extends Component {
     }
 
     render(){
-        console.log(this.state.customerList)
+        // console.log(this.state.customerList)
         const { selectedIndex } = this.state
         const allCustomerNames = this.state.customerList.map((el, i) => {
             return (

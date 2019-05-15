@@ -29,7 +29,7 @@ class Billing extends Component {
           method: 'POST',
           body: JSON.stringify(token),
         }).then(response => {
-            console.log(11111111,response.email)
+            // console.log(11111111,response.email)
         swal('Transation Complete!', '', 'success')
         });
       }
@@ -46,7 +46,7 @@ class Billing extends Component {
     }
 
     addNewCustomer = () => {
-        console.log('does add new customer even fire?', this.props)
+        // console.log('does add new customer even fire?', this.props)
         const newCustomer = {
             firstname: this.props.firstname,
             lastname: this.props.lastname,
@@ -64,51 +64,48 @@ class Billing extends Component {
             billing_state: this.state.bState,
             billing_zipcode: +this.state.bZipCode,
             billing_country: this.state.bCountry,
-            // card: this.state.cardNumber,
-            // expire: this.state.expire,
-            // code: this.state.code
         }
-        console.log('newCustomer', newCustomer)
+        // console.log('newCustomer', newCustomer)
         axios.post('/api/addCustomer', newCustomer).then( res => {
-            console.log('did this work???', res)
+            // console.log('did this work???', res)
         })
     }
 
     render(){
         
         return (
-            <div>
-                <div>
-                    <h2> Billing </h2>
-                    <label>
+            <div className="billing_div">
+                <div className="fullInfo_btnDiv">
+                    <h1> Billing </h1>
+                    <label className="billing_addy">
                         <span> billing address </span>
                         <input
                             onChange={(e) => this.handleInputChange('bAddy', e.target.value)}
                             type="text"
                             value={this.state.bAddy} />
                     </label>
-                    <label>
+                    <label className="billing_city">
                         <span> city </span>
                         <input
                             onChange={(e) => this.handleInputChange('bCity', e.target.value)}
                             type="text"
                             value={this.state.bCity} />
                     </label>
-                    <label>
+                    <label className="billing_state">
                         <span> state </span>
                         <input
                             onChange={(e) => this.handleInputChange('bState', e.target.value)}
                             type="text"
                             value={this.state.bState} />
                     </label>
-                    <label>
+                    <label className="billing_zip">
                         <span> zipcode </span>
                         <input
                             onChange={(e) => this.handleInputChange('bZipCode', e.target.value)}
                             type="text"
                             value={this.state.bZipCode} />
                     </label>
-                    <label>
+                    <label className="billing_country">
                         <span> country </span>
                         <input
                             onChange={(e) => this.handleInputChange('bCountry', e.target.value)}

@@ -5,3 +5,15 @@
 @import './Components/Wizard/Billing/Billing';
 @import './Components/Admin/AdminCustomerInfo/AdminCustomerInfo';
 @import './Components/Admin/Admin';
+@import './Components/Profile/Profile';
+@import './Components/Profile/EditProfile/EditProfile';
+
+$profile-font: 'Bitter', serif;
+$true-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+// background: rgb(109,188,235);
+// background: -moz-linear-gradient(top, rgba(109,188,235,1) 0%, rgba(52,163,228,1) 50%, rgba(13,148,224,1) 100%);
+// background: -webkit-linear-gradient(top, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+// background: linear-gradient(to bottom, rgba(109,188,235,1) 0%,rgba(52,163,228,1) 50%,rgba(13,148,224,1) 100%);
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dbceb', endColorstr='#0d94e0',GradientType=0 );
