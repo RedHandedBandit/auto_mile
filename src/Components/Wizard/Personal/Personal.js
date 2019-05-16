@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { personalInfo } from './../../../ducks/reducers/customerReducer';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 class Personal extends Component {
     constructor(props){
@@ -35,7 +36,21 @@ class Personal extends Component {
     
     addPersonalInfo = () => {
         const { firstname, lastname, company, email, homePhone, mobilePhone } = this.state
+        console.log(firstname, lastname, company, email, homePhone, mobilePhone)
+        console.log(this.state)
+        if(firstname === '' && lastname === ''){
+            return swal("Incomplete Form")
+        }
         this.props.personalInfo({firstname, lastname, company, email, homePhone, mobilePhone})
+        this.props.history.push('/wizard/shipping')
+        this.setState({
+            firstname: this.props.firstname,
+            lastname: this.props.lastname,
+            company: this.props.company,
+            email: this.props.email,
+            homePhone: this.props.homePhone,
+            mobilePhone: this.props.mobilePhone
+        })
     }
 
     render(){
@@ -87,9 +102,9 @@ class Personal extends Component {
                     </label>
                     <div className="btn_div"> 
                         <button onClick={() => this.cancelBtn()}> cancel </button>
-                        <Link to='/wizard/shipping'> 
+                        {/* <Link to='/wizard/shipping'>  */}
                             <button onClick={() => this.addPersonalInfo()} > next </button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>

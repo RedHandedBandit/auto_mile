@@ -25,9 +25,12 @@ class Navbar extends Component {
     render(){
         return (
             <div>
-                <h1>
+                <span className="navbar_title">
                     AutoMile
-                </h1>
+                </span>
+                    <span>
+                    <i class="fas fa-camera"></i>
+                    </span>
                 <div>
                     <ul>
                         <li className="dropdown">

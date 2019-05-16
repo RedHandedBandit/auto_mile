@@ -42,10 +42,15 @@ class Billing extends Component {
 
     addBillingInfo = () => {
         const { bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code } = this.state
+        console.log(bAddy, bCity, bState, bZipCode)
+        if(bAddy === '' && bCity === '' && bState === '' && bZipCode === '' && bCountry === '') {
+            return swal('incomplete form')
+        }
         this.props.billingInfo({ bAddy, bCity, bState, bZipCode, bCountry, cardNumber, expire, code })
     }
 
     addNewCustomer = () => {
+        const {bAddy, bCity, bState, bZipCode, bCountry} = this.state
         // console.log('does add new customer even fire?', this.props)
         const newCustomer = {
             firstname: this.props.firstname,
@@ -65,8 +70,13 @@ class Billing extends Component {
             billing_zipcode: +this.state.bZipCode,
             billing_country: this.state.bCountry,
         }
-        // console.log('newCustomer', newCustomer)
+
+        if(bAddy === '' && bCity === '' && bState === '' && bZipCode === '' && bCountry === '') {
+            return swal('incomplete form')
+        }
+
         axios.post('/api/addCustomer', newCustomer).then( res => {
+            this.props.history.push('/wizard/completePurchase')
             // console.log('did this work???', res)
         })
     }
@@ -121,9 +131,9 @@ class Billing extends Component {
                         <Link to="/wizard/shipping"> 
                             <button onClick={() => this.addBillingInfo()}> previous </button>
                         </Link>
-                        <Link to='/wizard/completePurchase' > 
+                        {/* <Link to='/wizard/completePurchase' >  */}
                             <button onClick={() => this.addNewCustomer()}> Complete Order </button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { shippingInfo } from './../../../ducks/reducers/customerReducer';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 class Shipping extends Component {
@@ -24,7 +25,11 @@ class Shipping extends Component {
 
     addShippingInfo = () => {
         const { hAddy, hCity, hState, hZipCode, hCountry } = this.state
+        if(hAddy === '' && hCity === '' && hState === '' && hZipCode === '' && hCountry === ''){
+            return swal('incomplete Form')
+        }
         this.props.shippingInfo({ hAddy, hCity, hState, hZipCode, hCountry })
+        this.props.history.push('/wizard/billing')
     }
 
     render(){
@@ -74,11 +79,11 @@ class Shipping extends Component {
                             <i className="fas fa-arrow-left"></i> 
                         </button> 
                     </Link>
-                    <Link to="/wizard/billing"> 
+                    {/* <Link to="/wizard/billing">  */}
                         <button onClick={() => this.addShippingInfo()}> 
-                            <i className="fas fa-arrow-right"></i>  
+                            <i className="fas fa-arrow-right"> </i>  
                         </button>
-                    </Link>
+                    {/* </Link> */}
                 </div>
             </div>
         )
