@@ -80,3 +80,16 @@ section div {
     border-radius: 0px;
 }
 
+/* @media(max-width: 850px) {
+    .register_div {
+        display: flex;
+        border: solid white;
+        flex-direction: column;
+    }
+
+    .register_info {
+        border: lime solid;
+        width: 100%;
+    }
+} */
+

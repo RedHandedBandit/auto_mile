@@ -130,3 +130,14 @@ button:hover {
 .fas:hover {
     color: #36A4E4;
 }
+
+@media(max-width: 750px) {
+    .fullInfo_div {
+        // border: solid black;
+        width: 100%;
+    }
+
+    .btn_div {
+        margin-top: 50px;
+    }
+}

@@ -110,3 +110,10 @@
     border-radius: 0px;
 } 
 
+@media (max-width: 750px){
+    .input_boxes {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+    }
+}

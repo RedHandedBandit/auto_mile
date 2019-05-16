@@ -1,5 +1,5 @@
 .admin_div {
-    border: solid black .5px;
+    // border: solid black .5px;
     height: 100vh;
     width: 100%;
     padding: 15px;
@@ -29,4 +29,21 @@
 
 .list_name {
     cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .admin_div {
+        width: 100%;
+        // border: solid black;
+        margin: 0;
+    }
+
+    .theNameDiv {
+        width: 75%;
+    }
+
+    .mapped_div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }

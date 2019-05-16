@@ -22,7 +22,7 @@ class Profile extends Component {
     render(){
         const allEmployeeInfo = this.state.employeeInfo.map((el, i) => {
             return (
-                <div key={i}>
+                <div className="allEmployeeInfo_mappedDiv" key={i}>
                     <div className="editPic_div">
                         <img src={el.image} alt="profile Pic" />
                         <button className="profilePic_btn"> edit profile picture </button>
@@ -54,7 +54,7 @@ class Profile extends Component {
             )
         })
         return (
-            <div>
+            <div className="profile_divvv">
                 <div> {allEmployeeInfo} </div>
                 <div className="editBtn_div">
                     <Link to="/editProfile"> 

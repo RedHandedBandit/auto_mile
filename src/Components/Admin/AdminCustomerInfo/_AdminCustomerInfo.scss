@@ -18,3 +18,9 @@
 .info_span {
     font-size: 15px;
 }
+
+@media(max-width: 740px) {
+    .customerInfo_div {
+        width: 75%;
+    }
+}

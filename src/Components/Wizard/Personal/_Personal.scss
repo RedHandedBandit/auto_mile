@@ -53,3 +53,19 @@ label input {
     font-family: 'Kodchasan';
     font-size: 55px;
 }
+
+@media(max-width: 750px) {
+    .allInfo_div {
+        display: flex;
+        border: solid black;
+        width: 100%;
+    }
+
+    label input {
+        max-width: 90%;
+    }
+
+    .btn_div {
+        width: 90%;
+    }
+}

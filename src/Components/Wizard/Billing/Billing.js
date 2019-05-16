@@ -112,7 +112,7 @@ class Billing extends Component {
                             type="text"
                             value={this.state.bCountry} />
                     </label>
-                        <div> Card Details </div>
+                        <div className="cardDetails_div"> Card Details </div>
                         <StripeCheckout
                             token={this.onToken}
                             stripeKey='pk_test_mYd6jOwkm5YVyrT7OYwORmqo'
