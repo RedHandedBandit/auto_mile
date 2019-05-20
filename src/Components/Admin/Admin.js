@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AdminCustomerInfo from './AdminCustomerInfo/AdminCustomerInfo';
+require('dotenv').config();
 
 class Admin extends Component {
     constructor(){
@@ -12,7 +13,7 @@ class Admin extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/customers').then( res => {
+        axios.get(process.env.REACT_APP_ALL_CUSTOMERS).then( res => {
             this.setState({
                 customerList: res.data
             })
@@ -28,7 +29,7 @@ class Admin extends Component {
     }
 
     deleteCustomerInfo = (id) => {
-        axios.delete(`/api/delete/${id}`).then( res => {
+        axios.delete(process.env.REACT_APP_DELETE_CUSTOMER).then( res => {
             this.componentDidMount(res.data)
             this.setState({
                 selectedIndex: 0

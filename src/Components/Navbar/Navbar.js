@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { employee } from './../../ducks/reducers/reducer';
 import axios from 'axios';
+require('dotenv').config()
 
 
 class Navbar extends Component {
@@ -14,7 +15,7 @@ class Navbar extends Component {
     }
 
     logout = () => {
-        axios.get('/auth/logout')
+        axios.get(process.env.REACT_APP_LOGOUT)
         .then(res => {
             this.props.employee({})
             this.props.history.push('/')
@@ -29,7 +30,7 @@ class Navbar extends Component {
                     AutoMile
                 </span>
                     <span>
-                    <i class="fas fa-camera"></i>
+                    <i className="fas fa-camera"></i>
                     </span>
                 <div>
                     <ul>

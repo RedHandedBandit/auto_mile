@@ -6,12 +6,13 @@ const authCtrl = require('./controllers/auth')
 const infoCtrl = require('./controllers/info')
 const middleware = require('./middleware/authMiddleware')
 
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, CLIENT_SECRET } = process.env
+const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, CLIENT_SECRET, REACT_APP_LOGIN, REACT_APP_REGISTER, REACT_APP_LOGOUT, REACT_APP_AUTH_CHECK, REACT_APP_EMPLOYEE_INFO, REACT_APP_EDIT_EMPLOYEE_INFO, REACT_APP_ADD_CUSTOMER, REACT_APP_ALL_CUSTOMERS, REACT_APP_DELETE_CUSTOMER } = process.env
 
 const stripe = require("stripe")(CLIENT_SECRET);
 
 
 const app = express()
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(express.json())
 app.use(session({
     secret: SESSION_SECRET,
@@ -29,17 +30,17 @@ massive(CONNECTION_STRING).then( db => {
 })
 
 //auth
-app.post('/auth/register', authCtrl.register)
-app.post('/auth/login', authCtrl.login)
-app.get('/auth/logout', authCtrl.logout) 
-app.get('/auth/me', authCtrl.checkMe)
-app.get('/auth/employeeInfo', authCtrl.getEmployeeInfo)
-app.put('/auth/editEmployeeInfo/:id', authCtrl.editEmployeeInfo)
+app.post(REACT_APP_REGISTER, authCtrl.register)
+app.post(REACT_APP_LOGIN, authCtrl.login)
+app.get(REACT_APP_LOGOUT, authCtrl.logout) 
+app.get(REACT_APP_AUTH_CHECK, authCtrl.checkMe)
+app.get(REACT_APP_EMPLOYEE_INFO, authCtrl.getEmployeeInfo)
+app.put(REACT_APP_EDIT_EMPLOYEE_INFO, authCtrl.editEmployeeInfo)
 
 //customer 
-app.post('/api/addCustomer', infoCtrl.addCustomerInfo)
-app.get('/api/customers', middleware.adminsOnly, infoCtrl.getAllCustomerInfo)
-app.delete('/api/delete/:id', infoCtrl.deleteCustomerInfo)
+app.post(REACT_APP_ADD_CUSTOMER, infoCtrl.addCustomerInfo)
+app.get(REACT_APP_ALL_CUSTOMERS, middleware.adminsOnly, infoCtrl.getAllCustomerInfo)
+app.delete(REACT_APP_DELETE_CUSTOMER, infoCtrl.deleteCustomerInfo)
 
 // stripe endpoint
 app.post('/save-stripe-token', async (req, res) => {

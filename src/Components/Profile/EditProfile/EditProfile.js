@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { employee } from './../../../ducks/reducers/reducer';
 import { Link } from 'react-router-dom';
+require('dotenv').config();
 
 class EditProfile extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class EditProfile extends Component {
     }
 
     componentDidMount = async () => {
-        const res = await axios.get('/auth/employeeInfo')
+        const res = await axios.get(process.env.REACT_APP_EMPLOYEE_INFO)
             this.setState({
                 employeeInfo: res.data[0]
             })
@@ -47,7 +48,7 @@ class EditProfile extends Component {
         }
 
         if(newPassword === comfirmedPassword){
-            axios.put(`/auth/editEmployeeInfo/${id}`, newEmployeeInfo).then( res => {
+            axios.put(process.env.REACT_APP_EDIT_EMPLOYEE_INFO, newEmployeeInfo).then( res => {
                 // res.sendStatus(200)
                 this.props.history.push('/profile')
             })

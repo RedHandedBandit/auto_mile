@@ -4,6 +4,7 @@ import axios from 'axios'
 import {employee} from './../../ducks/reducers/reducer';
 import {connect} from 'react-redux';
 import './Login.css'
+require('dotenv').config()
 
 class Login extends Component {
     constructor(props){
@@ -17,7 +18,7 @@ class Login extends Component {
 
     login = () => {
         const { email, password } = this.state
-        axios.post('/auth/login', {email, password}).then( res => {
+        axios.post(process.env.REACT_APP_LOGIN, {email, password}).then( res => {
             this.props.employee(res.data)
             this.props.history.push('/wizard/personal')
         })

@@ -75,7 +75,7 @@ class Billing extends Component {
             return swal('incomplete form')
         }
 
-        axios.post('/api/addCustomer', newCustomer).then( res => {
+        axios.post(process.env.REACT_APP_ADD_CUSTOMER, newCustomer).then( res => {
             this.props.history.push('/wizard/completePurchase')
             // console.log('did this work???', res)
         })

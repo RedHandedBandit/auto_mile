@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import profilePic from './../../assets/aging-black-and-white-homeless-34534.jpg';
+require('dotenv').config();
 
 class Profile extends Component {
     constructor(){
@@ -11,7 +13,7 @@ class Profile extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/auth/employeeInfo').then( res => {
+        axios.get(process.env.REACT_APP_EMPLOYEE_INFO).then( res => {
             this.setState({
                 employeeInfo: res.data
             })
@@ -23,11 +25,11 @@ class Profile extends Component {
         const allEmployeeInfo = this.state.employeeInfo.map((el, i) => {
             return (
                 <div className="allEmployeeInfo_mappedDiv" key={i}>
+                <h1 className="profileInfo_h1"> Profile Information </h1> 
                     <div className="editPic_div">
-                        <img src={el.image} alt="profile Pic" />
+                        <img src={profilePic} alt="profile Pic" />
                         <button className="profilePic_btn"> edit profile picture </button>
                     </div>
-                    <h1 className="profileInfo_h1"> Profile Information </h1> 
                     <div className="profileLabel_div">
                         <label>
                             <h4> first name </h4>

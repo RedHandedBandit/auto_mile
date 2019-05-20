@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { employee } from './../../ducks/reducers/reducer';
 import { connect } from 'react-redux';
 import './Register.css'
+require('dotenv').config();
 
 class Register extends Component {
     constructor(props){
@@ -20,7 +21,7 @@ class Register extends Component {
 
     register = () => {
         const { firstname, lastname, username, email, password, phone} = this.state
-        axios.post('/auth/register', { firstname, lastname, username, phone: +phone, email, password }).then( res => {
+        axios.post(process.env.REACT_APP_REGISTER, { firstname, lastname, username, phone: +phone, email, password }).then( res => {
             this.props.employee(res.data)
             this.props.history.push('/personal')
             this.setState({

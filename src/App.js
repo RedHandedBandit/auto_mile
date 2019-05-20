@@ -6,9 +6,11 @@ import routes from './routes';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {employee} from './ducks/reducers/reducer';
+require('dotenv').config()
+
 
 function App(props) {
-  axios.get('/auth/me').then( res => {
+  axios.get(process.env.REACT_APP_AUTH_CHECK).then( res => {
     //reduxstate
     props.employee(res.data)
   })
